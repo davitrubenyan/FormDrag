@@ -1,12 +1,6 @@
 <template lang="pug">
   div#app
-    router-view
-    div.right-form
-      h1 {{headerRight}}
-      hr
-      div
-        form
-          fieldset.field-right
+    router-view(:htmlForm="htmlCont")
 </template>
 
 <script>
@@ -14,8 +8,13 @@ export default {
   name: 'App',
   data () {
     return {
-      headerRight: 'Your Form'
+      headerRight: 'Your Form',
+      htmlCont: ''
     }
+  },
+  created: function () {
+  },
+  methods: {
   }
 }
 </script>
@@ -32,15 +31,5 @@ export default {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-}
-.right-form{
-  flex: 2;
-  margin: 0px 40px;
-}
-.field-right{
-  border: 1px solid #ccc;
-  min-height: 220px;
-  padding: 5px;
-  padding-bottom: 50px;
 }
 </style>
